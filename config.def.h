@@ -56,7 +56,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 
 #include <X11/XF86keysym.h>
 static Key keys[] = {
@@ -107,7 +107,9 @@ static Key keys[] = {
 	// --------------------------------------------- Apps -----------------------------------------------
 	{ MODKEY, XK_b, spawn, SHCMD("brave-browser") },
 	{ MODKEY, XK_e, spawn, SHCMD("thunar") },
-	{ MODKEY, XK_Return, spawn, SHCMD("alacritty") },
+	{ MODKEY, XK_Return, spawn, SHCMD("kitty") },
+	{ MODKEY, XK_f, spawn, SHCMD("~/.config/rofi/launchers/colorful/launcher.sh") },
+	{ MODKEY|ShiftMask, XK_p, spawn, SHCMD("~/.config/rofi/applets/menu/powermenu.sh") },
 };
 
 /* button definitions */
